@@ -1,0 +1,19 @@
+name: Star Event Workflow
+
+on:
+  push:
+
+jobs:
+  log-star-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log star event
+        run: |
+          echo "A user has starred or unstarred the repository."
+          echo "Event information:"
+          cat $GITHUB_EVENT_PATH
+
