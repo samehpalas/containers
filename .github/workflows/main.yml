@@ -9,11 +9,6 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
-      - name: Log star event
-        run: |
-          echo "A user has starred or unstarred the repository."
-          echo "Event information:"
-          cat $GITHUB_EVENT_PATH
 
