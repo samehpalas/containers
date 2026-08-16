@@ -1,14 +1,16 @@
-name: Star Event Workflow
-
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose environment"
+        required: true
+        default: "staging"
+
 
 jobs:
-  log-star-event:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-
-
+      - name: Deploy application
+        run: echo "Deploying the application..."
